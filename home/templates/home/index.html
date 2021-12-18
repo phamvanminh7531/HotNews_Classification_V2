@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>Turn Out Mag</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<link rel="stylesheet" type="text/css" href="{% static '/css/style.css' %}" />
+<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="ie.css" /><![endif]-->
+</head>
+<body>
+<!-- BEGIN wrapper -->
+<div id="wrapper">
+  <!-- BEGIN header -->
+  <div id="header">
+    <h1>HỆ THỐNG PHÂN TÍCH BÀI BÁO</h1>
+  </div>
+  <!-- END header -->
+
+  <!-- BEGIN content -->
+  <div id="content" >
+    <!-- end post -->
+    {% for i in hot_news %}
+      <div class="post">
+        <p class="details1">{{i.date_time}} / <a href="#">Tuoi Tre</a></p>
+        <div class="buffer">
+          <div class="content"> <a href="#"><img src="{{i.image}}" /></a>
+            <h2><a href="{{i.link}}">{{i.title}}</a></h2>
+            <p>{{i.content}}</p>
+          </div>
+          <p class="details2"><a href="#">{{i.author}}</a> / <a href="#">Read More</a></p>
+        </div>
+      </div>
+  {% endfor %}
+
+  {% for i in news %}
+  <div class="post">
+    <p class="details1a">{{i.date_time}} / <a href="#">Tuoi Tre</a></p>
+    <div class="buffer">
+      <div class="content"> <a href="#"><img src="{{i.image}}" /></a>
+        <h2><a href="{{i.link}}">{{i.title}}</a></h2>
+        <p>{{i.content}}</p>
+      </div>
+      <p class="details2"><a href="#">{{i.author}}</a> / <a href="#">Read More</a></p>
+    </div>
+  </div>
+{% endfor %}
+  </div>
+  <!-- END content -->
+  
+</body>
+</html>

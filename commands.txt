@@ -1,0 +1,16 @@
+1. cài đặt môi trường
+    conda create --name hotnews python=3.8
+
+2. kích hoạt môi trường
+    conda activate hotnews
+
+3. cài đặt thư viên cho môi trường
+    pip install -r requirements.txt
+
+4. lệnh chạy
+    python manage.py runserver
+
+NOTE: 
+    data: folder chứa dataset csv để huấn luyện, stopword list
+    re_processing.py: chưa code tiền xử lý
+    views.py: chứa code huấn luyện mô hình và xử lý
