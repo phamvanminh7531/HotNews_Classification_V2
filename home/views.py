@@ -57,8 +57,11 @@ def home(request):
         soup = BeautifulSoup(news.content, "html.parser")
         title = soup.find("h1", class_="article-title").text
         content = soup.find("h2", class_="sapo").text
-        body = soup.find("div", id="main-detail-body")
-        image = body.find("img").attrs["src"]
+        try:
+            body = soup.find("div", id="main-detail-body")
+            image = body.find("img").attrs["src"]
+        except:
+            image = ''
         date_time = soup.find("div", class_="date-time").text
         author = soup.find("div", class_="author").text
         label = predict(title + " " +content)
